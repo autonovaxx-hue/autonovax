@@ -203,13 +203,21 @@
           <div class="contact-item">🕘 Horario de atención: 9:30 – 18:30</div>
         </div>
         <div class="contact-card">
-          <h3>Solicita información</h3>
-          <form onsubmit="event.preventDefault(); alert('Gracias. Hemos recibido tu solicitud.');">
-            <input required placeholder="Nombre" style="margin-bottom:10px">
-            <input required type="tel" placeholder="Teléfono" style="margin-bottom:10px">
-            <input required type="email" placeholder="Email" style="margin-bottom:10px">
-            <textarea required placeholder="¿Qué vehículo te interesa?" style="width:100%;height:95px;padding:13px;border:1px solid #e5e7eb;border-radius:10px;resize:vertical;margin-bottom:12px"></textarea>
-            <button class="btn btn-red" style="width:100%">Enviar solicitud</button>
+        <input required type="email" placeholder="Email" style="margin-bottom:10px">
+             <h3>Solicita información</h3>
+          <form action="https://formsubmit.co/autonovaxx@gmail.com" method="POST">
+
+  <input required name="nombre" placeholder="Nombre" style="margin-bottom:10px">
+
+  <input required type="tel" name="telefono" placeholder="Teléfono" style="margin-bottom:10px">
+
+  <input required type="email" name="email" placeholder="Email" style="margin-bottom:10px">
+
+  <textarea required name="vehiculo" placeholder="¿Qué vehículo te interesa?" style="width:100%;height:95px;padding:13px;border:1px solid #e5e7eb;border-radius:10px;resize:vertical;margin-bottom:12px"></textarea>
+
+  <input type="hidden" name="_subject" value="Nueva solicitud - AutoNovaX">
+
+  <button class="btn btn-red" style="width:100%">Enviar solicitud</button>
           </form>
         </div>
       </div>
