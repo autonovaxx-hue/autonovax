@@ -135,25 +135,35 @@
           <div class="car-img" style="background-image:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80')"><span class="tag">Nuevo</span></div>
           <div class="card-body"><div class="brand">Audi</div><h3>A5 S line</h3><div class="specs"><span>2024</span><span>12.800 km</span><span>Híbrido</span></div><div class="price-row"><span class="price">41.900 €</span><a class="btn btn-dark" href="#contacto">Ver más</a></div></div>
         </article>
-              <article class="card">
-        <div class="car-img" style="background-image:url('https://autonovaxx-hue.github.io/autonovax/31a5da6a-11b8-4219-96d5-05aa07db8faa.jpg')">
-          <span class="tag">Destacado</span>
-        </div>
-        <div class="card-body">
-          <div class="brand">Mercedes-Benz</div>
-          <h3>GLC 220 Coupé</h3>
-          <div class="specs">
-            <span>2022</span>
-            <span>120.500 km</span>
-            <span>Diésel</span>
-            <span>Automático</span>
-          </div>
-          <div class="price-row">
-            <span class="price">38.500 €</span>
-            <a class="btn btn-dark" href="#contacto">Ver más</a>
-          </div>
-        </div>
-      </article>
+        <article class="card">
+  <div class="car-img" id="glc-gallery"
+       style="background-image:url('https://autonovaxx-hue.github.io/autonovax/31a5da6a-11b8-4219-96d5-05aa07db8faa.jpg')">
+
+    <span class="tag">Destacado</span>
+
+    <button onclick="glcPrev()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);border:0;border-radius:50%;width:40px;height:40px;font-size:24px;cursor:pointer;">‹</button>
+
+    <button onclick="glcNext()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;border-radius:50%;width:40px;height:40px;font-size:24px;cursor:pointer;">›</button>
+
+  </div>
+
+  <div class="card-body">
+    <div class="brand">Mercedes-Benz</div>
+    <h3>GLC 220 Coupé</h3>
+
+    <div class="specs">
+      <span>2022</span>
+      <span>120.500 km</span>
+      <span>Diésel</span>
+      <span>Automático</span>
+    </div>
+
+    <div class="price-row">
+      <span class="price">38.500 €</span>
+      <a class="btn btn-dark" href="#contacto">Ver más</a>
+    </div>
+  </div>
+</article>
       </div>
     </div>
   </section>
@@ -211,5 +221,47 @@
     <p>© 2026 AutoNovaX · Todos los derechos reservados</p>
   </div>
 </footer>
+  <script>
+const glcFotos = [
+  "31a5da6a-11b8-4219-96d5-05aa07db8faa.jpg",
+  "2501372b-5d2c-4bdc-8b08-5ca2457ab564.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_10.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_17.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_25.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_32.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_40.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_47.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_11_53.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_12_01.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_12_08.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_12_18.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_12_25.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_12_34.jpg",
+  "Imagen de ChatGPT 7 oct 2026, 11_12_47.jpg"
+];
+
+let glcFotoActual = 0;
+
+function glcMostrarFoto() {
+  const galeria = document.getElementById("glc-gallery");
+  galeria.style.backgroundImage =
+    "url('" +
+    "https://autonovaxx-hue.github.io/autonovax/" +
+    encodeURIComponent(glcFotos[glcFotoActual]).replace(/%20/g, "%20") +
+    "')";
+}
+
+function glcPrev() {
+  glcFotoActual =
+    (glcFotoActual - 1 + glcFotos.length) % glcFotos.length;
+  glcMostrarFoto();
+}
+
+function glcNext() {
+  glcFotoActual =
+    (glcFotoActual + 1) % glcFotos.length;
+  glcMostrarFoto();
+}
+</script>
 </body>
 </html>
